@@ -19,7 +19,7 @@ class SignIn extends Component{
     const {email,password} = this.state;
 
     try{
-        await auth. (email,password);
+        await auth.signInWithEmailAndPassword(email,password);
         this.setState({email:'',password:''})
     }
     catch(error){
