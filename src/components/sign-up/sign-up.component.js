@@ -36,6 +36,11 @@ class SignUp extends React.Component {
             console.log(error);
         }
     }
+
+    handleChange = event => {
+    const {name, value} = event.target;
+    this.setState({[name]:value})
+    }
     render() {
         const {displayName,email,password,confirmPassword} = this.state;
         return (
@@ -47,7 +52,7 @@ class SignUp extends React.Component {
                     </FormInput>
                     <FormInput type='email' name='email' value={email} onChange={this.handleChange} label='Email' required>
                     </FormInput>
-                    <FormInput type='password' name='Password' value={password} onChange={this.handleChange} label='Password' required>
+                    <FormInput type='password' name='password' value={password} onChange={this.handleChange} label='Password' required>
                     </FormInput>
                     <FormInput type='password' name='confirmPassword' value={confirmPassword} onChange={this.handleChange} label='Confirm Password' required>
                     </FormInput>
@@ -57,3 +62,5 @@ class SignUp extends React.Component {
         )
     }
 }
+
+export default SignUp;
